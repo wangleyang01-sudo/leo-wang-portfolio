@@ -6,7 +6,7 @@ A responsive, editorial-style portfolio built with plain HTML, CSS, and vanilla 
 
 - `index.html` — home page and selected work
 - `work/index.html` — work index and category links
-- `work/fashion.html`, `work/events.html`, `work/automotive.html`, `work/portraits.html` — project stories
+- `work/fashion.html`, `work/events.html`, `work/automotive.html`, `work/portraits.html`, `work/hyde-park.html` — project stories
 - `curatorial.html` — curatorial projects
 - `about.html` — biography
 - `contact.html` — contact details
@@ -38,6 +38,8 @@ The photographs currently use Unsplash image URLs as placeholders. Replace each 
 Create an `images/` folder in the repository and add your optimized JPG, WebP, or PNG files there. Pages inside `work/` use `../images/...`; pages at the repository root use `images/...`. Keep meaningful `alt` text, update each image caption, and adjust `loading="lazy"` or `fetchpriority="high"` only when appropriate.
 
 To add a project, create a page in `work/` using one of the existing project pages as a template, then add a card linking to it in `work/index.html` and, if desired, `index.html`. Keep paths relative and include a unique page title and description. Update the copy, credits, years, email address, and Instagram profile link to your details before launch.
+
+The Hyde Park project uses optimized local photographs in `images/hyde-park/`; the original images are not required to preview the site.
 
 ## Publish with GitHub Pages
 
