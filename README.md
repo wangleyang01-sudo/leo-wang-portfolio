@@ -27,17 +27,37 @@ Shared design and behavior live in `styles.css` and `main.js`. The responsive na
 
 Opening `index.html` directly may work, but a local server is recommended so relative links behave like they do on GitHub Pages.
 
-## Replace the placeholder photography
+## Add or replace photographs
 
-The photographs currently use Unsplash image URLs as placeholders. Replace each image's `src` in the relevant HTML file with a path to your own image. For example:
+The `images/` folder is where your photographs go. The site uses exact filenames (not automatic folder scanning), so you can upload a file into the matching folder and the page will use it automatically. If that file is not there yet, the existing Unsplash placeholder stays visible.
 
-```html
-<img src="../images/soft-forms-01.jpg" alt="Your concise description of the photograph">
-```
+| What the photo is for | Upload it here, using this exact filename |
+| --- | --- |
+| Homepage hero | `images/home/hero.jpg` |
+| Fashion card shown on Home and Work | `images/fashion/cover.jpg` |
+| Fashion project gallery | `images/fashion/01.jpg` through `images/fashion/04.jpg` |
+| Events card shown on Home and Work | `images/events/cover.jpg` |
+| Events project gallery | `images/events/01.jpg` through `images/events/04.jpg` |
+| Automotive card shown on Home and Work | `images/automotive/cover.jpg` |
+| Automotive project gallery | `images/automotive/01.jpg` through `images/automotive/04.jpg` |
+| Portraits card shown on Home and Work | `images/portraits/cover.jpg` |
+| Portraits project gallery | `images/portraits/01.jpg` through `images/portraits/04.jpg` |
+| Curatorial page hero | `images/curatorial-projects/hero.jpg` |
+| Ways of being seen | `images/curatorial-projects/ways-of-being-seen.jpg` |
+| Notes from elsewhere | `images/curatorial-projects/notes-from-elsewhere.jpg` |
+| Looking together | `images/curatorial-projects/looking-together.jpg` |
 
-Create an `images/` folder in the repository and add your optimized JPG, WebP, or PNG files there. Pages inside `work/` use `../images/...`; pages at the repository root use `images/...`. Keep meaningful `alt` text, update each image caption, and adjust `loading="lazy"` or `fetchpriority="high"` only when appropriate.
+### Simple upload steps
 
-To add a project, create a page in `work/` using one of the existing project pages as a template, then add a card linking to it in `work/index.html` and, if desired, `index.html`. Keep paths relative and include a unique page title and description. Update the copy, credits, years, email address, and Instagram profile link to your details before launch.
+1. Prepare your photo as a JPG. For example, rename the photo you want for the homepage to `hero.jpg`.
+2. Open the matching folder under `images/` in the repository. The folders are already included.
+3. Choose **Add file** → **Upload files**, select your photo, and make sure it has the exact filename shown above. Keep the name lowercase and the numbered gallery names exactly `01.jpg`, `02.jpg`, `03.jpg`, and `04.jpg`.
+4. Repeat for each photo. To replace a photo later, upload a new photo with the same filename.
+5. Preview the site before publishing. Do not commit or publish changes until you have reviewed and approved them.
+
+The home hero is controlled in `index.html`. The Home and Work category cards are in `index.html` and `work/index.html`. The four project galleries are in `work/fashion.html`, `work/events.html`, `work/automotive.html`, and `work/portraits.html`; the curatorial images are in `curatorial.html`. `main.js` switches to each local photo when it exists and falls back to the original Unsplash image if it does not. The `data-local-image` attributes next to each image in those HTML files connect the pages to the filenames in this table.
+
+Each project gallery currently has four photo slots. To use a different number of gallery photos or create another project, the page mapping in the relevant HTML file needs to be updated; folders alone cannot add images to a static GitHub Pages site because it does not provide automatic directory listing.
 
 ## Publish with GitHub Pages
 
